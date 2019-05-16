@@ -7,8 +7,14 @@ export default class App extends Component {
   state = {
     videos: [],
     selectedVideo: null
+
+
   };
 
+  componentDidMount() {
+    this.onTermSubmit('bharat');
+  }
+  
   onTermSubmit = async term =>{
 
     const response = await youtube.get('/search', {
@@ -17,8 +23,11 @@ export default class App extends Component {
       }
     });
 
-    this.setState({videos: response.data.items });
-    console.log(response);
+    this.setState({ 
+      videos: response.data.items,
+      selectedVideo: response.data.items[0] 
+    });
+
   };
 
   onVideoSelect = (video) => {
