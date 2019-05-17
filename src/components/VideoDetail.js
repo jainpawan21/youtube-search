@@ -10,7 +10,7 @@ const VideoDetail = ({ video }) => {
     return (
         <div>
             <div className="ui embed">
-            <iframe width="560" height="315" src={vid} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+            <iframe src={vid}></iframe> 
             </div>
             <div className="ui segment"> 
                 <h4 className="ui header">{video.snippet.title} </h4>
@@ -22,4 +22,3 @@ const VideoDetail = ({ video }) => {
 
 export default VideoDetail;
 
-// <iframe width="560" height="315" src="https://www.youtube.com/embed/Nt9L1jCKGnE" ></iframe>
